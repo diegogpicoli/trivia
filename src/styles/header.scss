@@ -1,0 +1,47 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    align-items: center;
+
+    img{
+        width: 50px;
+        border-radius: 50px;
+        margin-right: 10px;
+    }
+
+    .score {
+
+        svg{
+            color: $category;
+            font-size: 25px;
+            margin: 5px;
+        }
+    }
+
+    .assertions {
+
+        svg{
+            color: $secundary-color;
+            font-size: 20px;
+            margin: 5px;
+        }
+    }
+
+    div{
+        @include flex;
+        padding-right: 30px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+   .header{
+       flex-wrap: wrap;
+        .assertions {
+            display: none;
+        }
+   }
+}

@@ -1,0 +1,126 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.gamePage{
+    height: 100vh;
+    min-width: 100vw;
+}
+
+.game{
+    height: 90%;
+    display: flex;
+    background-image: url(../background_game.png); 
+    background-size: cover;
+
+    .question{
+        @include column;
+        width: 50%;
+        text-align: center;
+        align-items: center;
+        
+        .box{
+            margin-top: 50px;
+            @include column;
+            background-color: $box-color;
+            width: 70%;
+            height: 50%;
+            position: relative;
+            justify-content: space-between;
+
+            .category{
+                background-color: $category;
+                padding: 10px;
+                border-radius: 20px;
+                position: absolute;
+                top:-50px;
+                left: 0px;
+                width: 100%;
+                color: white;
+            }
+
+            .clock {
+                color: $timer;
+                font-weight: 500;
+
+                svg{
+                    font-size: 20px;
+                    margin: 5px;
+                    vertical-align:middle;
+                }
+            }
+        }
+    }
+
+    .answer-options{
+        @include column;
+        width: 50%;
+        
+        button{
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 80%;
+            display: flex;
+            justify-content: flex-start;
+            position: relative;
+
+            .correct {
+                color: $secundary-color;
+                
+            }
+            
+            .wrong {
+                color: red;
+            }
+
+            svg {
+                font-size: 30px;
+                margin-right: 20px;
+            }
+        }
+
+        .next{
+            @include flex;
+            justify-content: center;
+        }
+    }
+}
+
+#correct-answer {
+    box-shadow: 0 0 1em $secundary-color;
+}
+  
+#wrong-answer {
+    box-shadow: 0 0 1em rgb(255, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 720px) {
+   
+    .game {
+       flex-direction: column;
+       justify-content: space-evenly;
+
+    .question {
+        width: 100%;
+        margin-top: 20px;
+        
+        .box {
+            height: auto;
+            min-width: 80%;
+        }
+    }
+
+    .answer-options {
+        margin-top: 20px;
+        width: 100%;
+        align-items: center;
+        
+        
+        .button {
+            width: auto;
+            min-width: 80%;
+        }
+    }
+    }
+
+}
+  

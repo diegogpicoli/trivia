@@ -1,0 +1,78 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.ranking {
+    height: 100vh;
+    background-image: url(../background_ranking.svg); 
+    background-size: cover;
+    
+    .logo{
+        width: 200px;
+        margin: 10px
+    }
+    
+    @include column;
+    align-items: center;
+    
+    .box {
+        width: 40%;
+        min-width: 330px;
+        height: 60%;
+        @include column;
+        align-items: center;
+
+        h1{
+            color: $primary-color;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+    }
+}
+
+
+ol{
+    overflow-y: scroll;
+    height: 80%;
+    width: 100%;
+
+    li{
+        @include flex;
+        margin: 10px;
+        justify-content: space-between;
+        background-color: $raking-color;
+        border-radius: 50px;
+        height: 50px;
+        
+        img{
+            margin-left: 10px;
+            margin-right: 10px;
+            border-radius: 50%;
+            width: 40px;
+        }
+
+        .rankingPlayer, .rankingScore {
+            @include flex;
+        }
+
+        .rankingScore{
+            padding: 10px;
+            border-radius: 50px;
+            min-width: 150px;
+            background-color: $box-color;
+            box-shadow: 0px 4px 4px rgb(0,0,0, 0.25);
+            height: 50px;
+
+            svg {
+                color: $category;
+                margin: 10px;
+            }
+        }
+    }
+}
+

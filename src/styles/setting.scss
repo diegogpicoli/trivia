@@ -1,0 +1,54 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.setting {
+    height: 100vh;
+    background-image: url(../background_ranking.svg); 
+    background-size: cover;
+    
+    .logo{
+        width: 200px;
+        margin: 10px
+    }
+    
+    @include column;
+    align-items: center;
+    
+    .box {
+        width: 35%;
+        min-width: 350px;
+        height: 60%;
+        @include column;
+        align-items: center;
+        justify-content: space-evenly;
+
+        h1{
+            color: $primary-color;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        button {
+            width: 300px;
+            margin-top: 20px;
+        }
+
+        select {
+            width: 300px;
+        }
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .setting {
+        .box {
+            min-width: 300px;
+
+            button, select{
+                width: 250px;
+            }
+        }
+    }
+ }
+
+

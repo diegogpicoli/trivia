@@ -1,0 +1,45 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.login {
+    height: 100vh;
+    background-image: url(../background_login.svg); 
+    background-size: cover;
+
+    @include column;
+    align-items: center;
+
+    img{
+        width: 20%;
+        min-width: 200px;
+    }
+
+    form{
+        @include column;
+        align-items: center;
+        background-color: white;
+        width: 45%;
+        min-width: 300px;
+        min-height: 250px;
+        height: 40%;
+        margin: 10px;
+        border-radius: 8px;
+        justify-content: center;
+
+        input{
+            width: 80%;
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 80%;
+        }
+
+    }
+
+    .settingIcon {
+        color: $secundary-color;
+        margin-top: 15px;
+        font-size: 30px;
+    }
+}
